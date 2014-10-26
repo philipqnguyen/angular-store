@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="gemStore">
   <head>
     <title>FlatLander's Gem Store</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/angular.min.js"></script>
+    <script src="app/app.js"></script>
   </head>
-  <body>
-
+  <body class="container" ng-controller="StoreController as store">
+    <div class="product row" ng-repeat="product in store.products">
+      <h3>
+        {{product.name}}
+        <em class="pull-right">${{product.price}}</em>
+      </h3>
+    </div>
   </body>
 </html>
